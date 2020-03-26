@@ -1,0 +1,251 @@
+# py --version
+
+# py -3 --version
+
+# py -3 -m pip --version
+
+# py -3 -m pip install pipenv
+
+# py -3 -m pip show pipenv
+
+# py -3 -m pip freeze
+
+# py -3 -m pipenv
+
+Options:
+  --where             Output project home
+                      information.
+  --venv              Output virtualenv
+                      information.
+  --py                Output Python interpreter
+                      information.
+  --envs              Output Environment Variable
+                      options.
+  --rm                Remove the virtualenv.
+  --bare              Minimal output.
+  --completion        Output completion (to be
+                      eval'd).
+  --man               Display manpage.
+  --support           Output diagnostic information
+                      for use in GitHub issues.
+  --site-packages     Enable site-packages for the
+                      virtualenv.  [env var:
+                      PIPENV_SITE_PACKAGES]
+  --python TEXT       Specify which version of
+                      Python virtualenv should use.
+  --three / --two     Use Python 3/2 when creating
+                      virtualenv.
+  --clear             Clears caches (pipenv, pip,
+                      and pip-tools).  [env var:
+                      PIPENV_CLEAR]
+  -v, --verbose       Verbose mode.
+  --pypi-mirror TEXT  Specify a PyPI mirror.
+  --version           Show the version and exit.
+  -h, --help          Show this message and exit.
+
+
+Usage Examples:
+   Create a new project using Python 3.7, specifically:
+   $ pipenv --python 3.7
+
+   Remove project virtualenv (inferred from current directory):
+   $ pipenv --rm
+
+   Install all dependencies for a project (including
+dev):
+   $ pipenv install --dev
+
+   Create a lockfile containing pre-releases:
+   $ pipenv lock --pre
+
+   Show a graph of your installed dependencies:
+   $ pipenv graph
+
+   Check your installed dependencies for security vulnerabilities:
+   $ pipenv check
+
+   Install a local setup.py into your virtual environment/Pipfile:
+   $ pipenv install -e .
+
+   Use a lower-level pip command:
+   $ pipenv run pip freeze
+
+Commands:
+  check      Checks for security vulnerabilities
+             and against PEP 508 markers provided
+             in Pipfile.
+  clean      Uninstalls all packages not specified
+             in Pipfile.lock.
+  graph      Displays currently-installed
+             dependency graph information.
+  install    Installs provided packages and adds
+             them to Pipfile, or (if no packages
+             are given), installs all packages from
+             Pipfile.
+  lock       Generates Pipfile.lock.
+  open       View a given module in your editor.
+  run        Spawns a command installed into the
+             virtualenv.
+  shell      Spawns a shell within the virtualenv.
+  sync       Installs all packages specified in
+             Pipfile.lock.
+  uninstall  Un-installs a provided package and
+             removes it from Pipfile.
+  update     Runs lock, then sync.
+
+
+
+
+
+# py -3 -m pipenv shell : to activate the env, it is gonna sub-shell as virtual env, and create pipfile as jsonfile in nodejs
+
+# py -3 -m pipenv install camelcase : install camelcase
+
+# py -3 -m pipenv run pip freeze : list packages in the env folder created
+
+#py -3 -m pipenv run pip list : list all packages
+
+# py -3 -m pipenv run pip show camelcase : show camelcase details
+
+# py -3 -m pipenv lock -r : list packages in lock file
+
+# py -3 -m pipenv uninstall camelcase
+
+*** Install Dev dependencies that you do not want in developement ***
+# py -3 -m pipenv install nose --dev
+
+*** Install a requirement txt file with dependencies needed ***
+
+# py -3 -m pipenv install -r ./requirement.txt
+
+
+
+*** Create a Django project ****
+# django-admin startproject testproject
+
+** cd the testproject
+# python manage.py runserver
+python is version 3 which is installed globally and also in the virtualenv
+
+
+* Check for vulnerabilities
+# py -3 -m pipenv check
+
+    Checking PEP 508 requirements…
+    Passed!
+    Checking installed package safety…
+    37772: pillow >6.0,<6.2.2 resolved (6.2.0 installed)!
+    There is a DoS vulnerability in Pillow before 6.2.2 caused by FpxImagePlugin.py calling the range function on an unvalidated 32-bit integer if the number of bands is large. On Windows running 32-bit Python, this
+    results in an OverflowError or MemoryError due to the 2 GB limit. However, on Linux running 64-bit Python
+    this results in the process being terminated by the OOM killer. See: CVE-2019-19911.
+
+    37782: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/FliDecode.c in Pillow before 6.2.2 has an
+    FLI buffer overflow. See: CVE-2020-5313.
+
+    37781: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/PcxDecode.c in Pillow before 6.2.2 has a PCX P mode buffer overflow. See:CVE-2020-5312.
+
+    37780: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/SgiRleDecode.c in Pillow before 6.2.2 has
+    an SGI buffer overflow. See: CVE-2020-5311.
+
+    37779: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/TiffDecode.c in Pillow before 6.2.2 has a
+    TIFF decoding integer overflow, related to realloc. See: CVE-2020-5310.
+
+    37782: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/FliDecode.c in Pillow before 6.2.2 has an
+    FLI buffer overflow. See: CVE-2020-5313.
+
+    37781: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/PcxDecode.c in Pillow before 6.2.2 has a PCX P mode buffer overflow. See:CVE-2020-5312.
+
+    37780: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/SgiRleDecode.c in Pillow before 6.2.2 has
+    an SGI buffer overflow. See: CVE-2020-5311.
+
+    37779: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/TiffDecode.c in Pillow before 6.2.2 has a
+    TIFF decoding integer overflow, related to realloc. See: CVE-2020-5310.
+
+    37782: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/FliDecode.c in Pillow before 6.2.2 has an
+    FLI buffer overflow. See: CVE-2020-5313.
+
+    37781: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/PcxDecode.c in Pillow before 6.2.2 has a PCX P mode buffer overflow. See:CVE-2020-5312.
+
+    37780: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/SgiRleDecode.c in Pillow before 6.2.2 has
+    an SGI buffer overflow. See: CVE-2020-5311.
+
+    37779: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/TiffDecode.c in Pillow before 6.2.2 has a
+    TIFF decoding integer overflow, related to realloc. See: CVE-2020-5310.
+
+    37782: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/FliDecode.c in Pillow before 6.2.2 has an
+    FLI buffer overflow. See: CVE-2020-5313.
+
+    37781: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/PcxDecode.c in Pillow before 6.2.2 has a PCX P mode buffer overflow. See:CVE-2020-5312.
+
+    37780: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/SgiRleDecode.c in Pillow before 6.2.2 has
+    an SGI buffer overflow. See: CVE-2020-5311.
+
+    37779: pillow <6.2.2 resolved (6.2.0 installed)!
+    libImaging/TiffDecode.c in Pillow before 6.2.2 has a
+    TIFF decoding integer overflow, related to realloc. See: CVE-2020-5310.
+
+    37766: django >=2.2,<2.2.8 resolved (2.2.4 installed)!
+    Django 2.1 before 2.1.15 and 2.2 before 2.2.8 allows
+    unintended model editing. A Django model admin displaying inline related models, where the user has view-only permissions to a parent model but edit permissions to the inline model, would be presented with an editing UI, allowing POST requests, for updating the inline model. Directly editing the view-only parent model was not possible, but the parent model's save() method was called, triggering potential side effects, and causing pre and post-save signal handlers to be invoked. (To resolve this, the Django admin is adjusted
+    to require edit permissions on the parent model in order for inline models to be editable.) See: CVE-2019-19118.
+
+    37771: django >=2.0,<2.2.9 resolved (2.2.4 installed)!
+    Django before 1.11.27, 2.x before 2.2.9, and 3.x before 3.0.1 allows account takeover. A suitably crafted
+    email address (that is equal to an existing user's email address after case transformation of Unicode characters) would allow an attacker to be sent a password reset token for the matched user account. (One mitigation in the new releases is to send password reset tokens only to the registered user email address.) See CVE-2019-19844.
+
+    37970: django >=2.2,<2.2.10 resolved (2.2.4 installed)!
+    Django 1.11 before 1.11.28, 2.2 before 2.2.10, and 3.0 before 3.0.3 allows SQL Injection if untrusted data is used as a StringAgg delimiter (e.g., in Django applications that offer downloads of data as a series of rows with a user-specified column delimiter). By passing a suitably crafted delimiter to a contrib.postgres.aggregates.StringAgg instance, it was possible to break escaping and inject malicious SQL.
+
+    38010: django >=2.2.0,<2.2.11 resolved (2.2.4 installed)!
+    Django 1.11 before 1.11.29, 2.2 before 2.2.11, and 3.0 before 3.0.4 allows SQL Injection if untrusted data is used as a tolerance parameter in GIS functions and aggregates on Oracle. By passing a suitably crafted tolerance to GIS functions and aggregates on Oracle, it was possible to break escaping and inject malicious SQL. See CVE-2020-9402.
+
+** Changes matched
+django = "==2.2.8"
+pillow = "==6.2.2"
+
+
+# py -3 -m pipenv install
+# py -3 -m pipenv check
+# py -3 -m pipenv graph
+
+
+
+*** Prepare your lock file before deployement ***
+
+- when installing a dependency we get a * on pipfile as the lastest version,
+but when you deploy you wanna make sure that the deployement uses the version that you used during developement.
+because if you run pipenv install in the server it is going to run or install the lastest version.
+
+- what you need to do, it is to ignore the pipfile and use the lock file.
+
+* Prepare your lock file
+# py -3 -m pipenv lock
+# py -3 -m pipenv install --ignore-pipfile
+
+this will install whatever version you had on your lock file at the beginning of the project.
+
+*** to exit the pipshell just type exit.
+
+
+
+
+
+
+
+
+
