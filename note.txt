@@ -244,6 +244,42 @@ this will install whatever version you had on your lock file at the beginning of
 
 
 
+*** PIP Command List
+
+	Setup VS Code for Python
+
+•	Install VS Code
+•	Install Python, in this case version 3
+•	 Ctrl + shift +p  : to open the command pallet
+•	Python:terminal   : to start a new terminal for python
+•	You can run python code on the terminal or by running the run button on your top right
+	py-3  -m pip  --version  : check pip version
+	py -3 -m pip install –upgrade pip  : upgrade the pip version
+	/pictures/Scripts/activate : to activate the virtual Env  in windows ; Only working on window command prompt
+	Py  -m pip install -u pip : how to upgrade pip for python
+	Py  -- version  : Check python version
+	Py  -m pip --version  check pip version
+	Py  -m pip install camelcase : install camelcase module via pip
+	Py -m  pip show camelcase : Show details about module camelcase
+	Py -m pip list : to list all installed packages
+	Py -m  pip list  --outdated:  List all outdated package
+	Py -m  pip install camelcase --upgrade: update an outdated package
+	Py -m  pip install module  --upgrade  --force -reinstall  : to completely reinstall a package
+	Pip uninstall package : to get rid of the package
+	Py -m  pip freeze : output installed packages in requirement format
+
+Run Jupyter on Visual Studio Code
+	Ctrl + Shift  + P : to open a new command pallete
+	Python: Select Intrepreter to start jupyter server
+	Select the python version
+	Python: Create new blank jupyter note ….
+  
+Jupyter Commands:
+	Ctrl + enter : to execute command, the variable needs to be mentioned alone in the command
+	Shift + enter : Create a new shell
+
+
+
 
 
 
